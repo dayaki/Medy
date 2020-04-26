@@ -1,34 +1,37 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {ForwardIcon} from '../../assets/icons';
+import {ForwardIcon, PlayIcon} from '../../assets/icons';
 import {Colors} from '../constants/colors';
 
-const Card = ({title, text, image, onPress}) => {
+const Card = ({title, text, image, onPress, style, play}) => {
   return (
-    <CardWrapper>
-      <Image
-        source={image}
-        resizeMode="cover"
-        imageStyle={{width: 211, height: 187, left: 100}}>
+    <CardWrapper style={{...style}}>
+      <Image source={image} resizeMode="cover">
         <CardTitle>{title}</CardTitle>
         <CardTime>{text}</CardTime>
         <CardBtn activeOpacity={0.8} onPress={onPress}>
-          <ForwardIcon width={18} height={18} />
+          {play ? (
+            <PlayIcon width={18} height={18} fill="#fff" />
+          ) : (
+            <ForwardIcon width={18} height={18} />
+          )}
         </CardBtn>
       </Image>
     </CardWrapper>
   );
 };
 
+// imageStyle={{width: 211, height: 187, left: 100}}
+
 const CardWrapper = styled.View`
   margin-bottom: 30px;
-  width: 315px;
+  width: 100%;
   height: 198px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
   background: transparent;
 `;
 const Image = styled.ImageBackground`
-  width: 315px;
+  width: 100%;
   height: 198px;
   padding: 40px 20px 20px 25px;
   background: ${Colors.white};

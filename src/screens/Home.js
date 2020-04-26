@@ -16,11 +16,16 @@ const Home = ({navigation}) => {
     navigation.navigate('Category', {type});
   };
 
+  const openPreview = () => {
+    navigation.navigate('Preview');
+  };
+
   return (
     <Container showsVerticalScrollIndicator={false}>
       <Header
         title={'Dashboard'}
         icon={<FilterIcon width={28} height={28} />}
+        style={{paddingHorizontal: 30}}
       />
       <InfoCard>
         <Icon>
@@ -43,7 +48,7 @@ const Home = ({navigation}) => {
             imageStyle={{left: 95, top: 70}}>
             <CardTitle>Anxiety Problems</CardTitle>
             <CardTime>20 mins</CardTime>
-            <CardBtn>
+            <CardBtn activeOpacity={0.8} onPress={openPreview}>
               <ForwardIcon width={16} height={16} />
             </CardBtn>
           </Card>
@@ -132,7 +137,7 @@ const SectionTitle = styled.Text`
   padding-left: 30px;
 `;
 const Slider = styled.ScrollView`
-  width: ${Dimensions.get('screen').width};
+  width: ${Dimensions.get('screen').width}px;
   height: 200px;
   padding-left: 30px;
 `;

@@ -7,6 +7,8 @@ import {HomeTabIcon, SearchTabIcon, ProfileTabIcon} from '../../assets/icons';
 // Screens
 import Home from '../screens/Home';
 import Category from '../screens/Category';
+import Preview from '../screens/Preview';
+import Player from '../screens/Player';
 import Explore from '../screens/Explore';
 import Profile from '../screens/Profile';
 import Settings from '../screens/Settings';
@@ -64,6 +66,8 @@ const HomeStack = () => {
     <Stack.Navigator headerMode="none">
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Category" component={Category} />
+      <Stack.Screen name="Preview" component={Preview} />
+      <Stack.Screen name="Play" component={Player} />
     </Stack.Navigator>
   );
 };

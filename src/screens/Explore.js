@@ -54,6 +54,7 @@ const Explore = () => {
 
 const Container = styled.ScrollView`
   flex: 1;
+  padding: 30px;
   padding-top: 100px;
   background: ${Colors.lightgray};
 `;

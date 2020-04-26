@@ -14,17 +14,25 @@ const Category = ({route, navigation}) => {
         icon={<FilterIcon width={28} height={28} />}
       />
       <Title>{type}</Title>
-      {/* <Card
-        title="Meditation Break"
-        text="10 min"
-        image={require('../../assets/images/human-5.png')}
-      /> */}
+      <Cards>
+        <Card
+          title="Meditation Break"
+          text="10 min"
+          image={require('../../assets/images/human-4.png')}
+        />
+        <Card
+          title="Deep Breathing"
+          text="25 min"
+          image={require('../../assets/images/human-5.png')}
+        />
+      </Cards>
     </Container>
   );
 };
 
 const Container = styled.ScrollView`
   flex: 1;
+  padding: 30px;
   padding-top: 100px;
   background: ${Colors.lightgray};
 `;
@@ -33,6 +41,8 @@ const Title = styled.Text`
   font-size: 25px;
   line-height: 33px;
   color: ${Colors.darkblue};
+  margin: 25px 0px;
 `;
+const Cards = styled.View``;
 
 export default Category;

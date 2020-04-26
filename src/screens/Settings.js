@@ -66,11 +66,11 @@ const Settings = ({navigation}) => {
 
 const Container = styled.ScrollView`
   flex: 1;
+  padding: 30px;
   padding-top: 100px;
   background: ${Colors.lightgray};
 `;
 const List = styled.View`
-  padding: 0px 30px;
   width: 100%;
   margin-top: 20px;
 `;

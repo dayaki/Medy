@@ -64,6 +64,7 @@ const Profile = ({navigation}) => {
 
 const Container = styled.ScrollView`
   flex: 1;
+  padding: 30px;
   padding-top: 100px;
   background: ${Colors.lightgray};
 `;
@@ -71,7 +72,6 @@ const Avatar = styled.View`
   flex-direction: row;
   align-items: center;
   margin-top: 30px;
-  padding: 0px 30px;
 `;
 const User = styled.View`
   margin-left: 28px;
@@ -134,10 +134,8 @@ const SectionTitle = styled.Text`
   font-size: 19px;
   color: ${Colors.darkblue};
   margin-bottom: 32px;
-  padding-left: 30px;
 `;
 const Cards = styled.View`
-  padding: 0px 30px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
