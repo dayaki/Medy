@@ -5,8 +5,8 @@ import AnimatedTabBar from '@gorhom/animated-tabbar';
 import {HomeTabIcon, SearchTabIcon, ProfileTabIcon} from '../../assets/icons';
 
 // Screens
-import Intro from '../screens/Intro';
 import Home from '../screens/Home';
+import Category from '../screens/Category';
 import Explore from '../screens/Explore';
 import Profile from '../screens/Profile';
 import Settings from '../screens/Settings';
@@ -59,6 +59,15 @@ const tabs = {
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
+const HomeStack = () => {
+  return (
+    <Stack.Navigator headerMode="none">
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Category" component={Category} />
+    </Stack.Navigator>
+  );
+};
+
 const ProfileStack = () => {
   return (
     <Stack.Navigator headerMode="none" mode="modal">
@@ -78,7 +87,7 @@ export default function App() {
           itemOuterSpace={{horizontal: 22}}
         />
       )}>
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Explore" component={Explore} />
       <Tab.Screen name="Profile" component={ProfileStack} />
     </Tab.Navigator>

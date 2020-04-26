@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {Colors} from '../constants/colors';
+import {BackwardIcon} from '../../assets/icons';
 
-const Header = ({title, icon, onPress}) => (
+const Header = ({title, icon, onPress, backPress, back = null}) => (
   <Wrapper>
-    <Title>{title}</Title>
+    {back === null ? (
+      <Title>{title}</Title>
+    ) : (
+      <Button activeOpacity={0.8} onPress={backPress}>
+        <BackwardIcon width={28} height={28} />
+      </Button>
+    )}
     <Button activeOpacity={0.8} onPress={onPress}>
       {icon}
     </Button>

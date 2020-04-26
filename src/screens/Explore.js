@@ -1,13 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {Header} from '../constants';
-import {
-  FilterIcon,
-  AchieveIcon,
-  ForwardIcon,
-  BriefcaseIcon,
-  JournalIcon,
-} from '../../assets/icons';
+import {Header} from '../components';
+import {FilterIcon, ForwardIcon} from '../../assets/icons';
 import {Colors} from '../constants/colors';
 
 const Explore = () => {

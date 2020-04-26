@@ -1,7 +1,7 @@
 import React from 'react';
 import {Dimensions} from 'react-native';
 import styled from 'styled-components/native';
-import {Header} from '../constants';
+import {Header} from '../components';
 import {
   FilterIcon,
   AchieveIcon,
@@ -11,7 +11,11 @@ import {
 } from '../../assets/icons';
 import {Colors} from '../constants/colors';
 
-const Home = () => {
+const Home = ({navigation}) => {
+  const openCategory = type => {
+    navigation.navigate('Category', {type});
+  };
+
   return (
     <Container showsVerticalScrollIndicator={false}>
       <Header
@@ -60,12 +64,12 @@ const Home = () => {
       <Section bottom>
         <SectionTitle>Categories</SectionTitle>
         <Slider showsHorizontalScrollIndicator={false} horizontal>
-          <Category>
+          <Category activeOpacity={0.8} onPress={() => openCategory('Job')}>
             <BriefcaseIcon width={24} height={24} />
             <CategoryName>Job Stress</CategoryName>
             <Count>38 sessions</Count>
           </Category>
-          <Category>
+          <Category activeOpacity={0.8} onPress={() => openCategory('Mind')}>
             <JournalIcon width={24} height={24} />
             <CategoryName>Mind Journal</CategoryName>
             <Count>19 sessions</Count>
@@ -162,7 +166,7 @@ const CardBtn = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `;
-const Category = styled.View`
+const Category = styled.TouchableOpacity`
   background: ${Colors.white};
   padding: 25px 15px 15px;
   border-radius: 20px;
