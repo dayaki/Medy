@@ -1,9 +1,15 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 import AnimatedTabBar from '@gorhom/animated-tabbar';
 import {HomeTabIcon, SearchTabIcon, ProfileTabIcon} from '../../assets/icons';
-import Home from '../screens/Home';
+
+// Screens
 import Intro from '../screens/Intro';
+import Home from '../screens/Home';
+import Explore from '../screens/Explore';
+import Profile from '../screens/Profile';
+import Settings from '../screens/Settings';
 
 const tabs = {
   Home: {
@@ -20,7 +26,7 @@ const tabs = {
       inactiveColor: 'rgba(223,215,243,0)',
     },
   },
-  Search: {
+  Explore: {
     labelStyle: {
       color: '#5B37B7',
     },
@@ -51,6 +57,16 @@ const tabs = {
 };
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+const ProfileStack = () => {
+  return (
+    <Stack.Navigator headerMode="none" mode="modal">
+      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Settings" component={Settings} />
+    </Stack.Navigator>
+  );
+};
 
 export default function App() {
   return (
@@ -63,8 +79,8 @@ export default function App() {
         />
       )}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Search" component={Intro} />
-      <Tab.Screen name="Profile" component={Intro} />
+      <Tab.Screen name="Explore" component={Explore} />
+      <Tab.Screen name="Profile" component={ProfileStack} />
     </Tab.Navigator>
   );
 }

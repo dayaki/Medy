@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react';
+import {Dimensions} from 'react-native';
 import styled from 'styled-components/native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import {Colors} from '../constants/colors';
@@ -103,7 +104,7 @@ const Slider = styled.View`
   align-items: center;
 `;
 const ImageWrapper = styled.View`
-  width: 375px;
+  width: ${Dimensions.get('window').width}px;
   height: 315px;
   margin-top: 70px;
 `;
@@ -135,7 +136,7 @@ const Pagination = styled.View`
   margin-bottom: 20px;
 `;
 const Dot = styled.View`
-  width: 31px;
+  width: 6px;
   height: 6px;
   border-radius: 58px;
   margin: 0px 4px;
